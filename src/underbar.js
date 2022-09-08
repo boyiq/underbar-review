@@ -391,6 +391,7 @@
         randomNumberGenerator();
       }
       copy[i] = array[randomNumber];
+      alreadyGenerated.push(randomNumber);
     }
     return copy;
   };
