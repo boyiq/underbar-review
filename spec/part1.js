@@ -332,7 +332,7 @@
         var iterator = function(value) { return value === 1; };
         var numbers = [1, 2, 2, 3, 4, 4];
 
-        expect(_.uniq(numbers, iterator)).to.eql([1]); //******/
+        expect(_.uniq(numbers, iterator)).to.eql([1, 2]);
       });
 
       it('should produce a brand new array instead of modifying the input array', function() {
@@ -399,7 +399,7 @@
           { name: 'curly', age: 50 }
         ];
 
-        expect(_.pluck(people, 'name')).to.equal(['moe', 'curly']);
+        expect(_.pluck(people, 'name')).to.eql(['moe', 'curly']);
       });
 
       it('should not modify the original array', function() {
@@ -410,7 +410,7 @@
 
         _.pluck(people, 'name');
 
-        expect(people).to.equal([{ name: 'moe', age: 30 }, { name: 'curly', age: 50 }]);
+        expect(people).to.eql([{ name: 'moe', age: 30 }, { name: 'curly', age: 50 }]);
       });
     });
 
